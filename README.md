@@ -1,8 +1,7 @@
 # 🚀 Oğulcan Kacar - Portfolio Website
 
-Ben Oğulcan Kaçar'ın kişisel portfolio website'i. Modern React teknolojileri kullanılarak geliştirilmiş, responsive tasarıma sahip bir web sitesidir. Yazılım geliştirme yolculuğum, projelerim ve iletişim bilgilerimi içerir.
+Ben Oğulcan Kacar'ın kişisel portfolio website'i. Modern React teknolojileri kullanılarak geliştirilmiş, responsive tasarıma sahip bir web sitesidir. Yazılım geliştirme yolculuğum, projelerim ve iletişim bilgilerimi içerir.
 
-![Portfolio Preview](./public/images/portfolio-preview.png)
 
 ## ✨ Özellikler
 
@@ -27,25 +26,9 @@ Ben Oğulcan Kaçar'ın kişisel portfolio website'i. Modern React teknolojileri
 - **Git** - Versiyon kontrolü
 - **VS Code** - Development environment
 
-## 🚀 Canlı Demo
+## 📸 Ekran Görüntüsü
 
-[Portfolio Website'i Görüntüle](https://ogulcankacar-portfolio.netlify.app)
-
-## 📸 Ekran Görüntüleri
-
-<details>
-<summary>Sayfalardan Örnekler</summary>
-
-### Ana Sayfa
-![Ana Sayfa](./public/images/screenshots/home.png)
-
-### Hakkımda Sayfası
-![Hakkımda](./public/images/screenshots/about.png)
-
-### Projeler Sayfası
-![Projeler](./public/images/screenshots/projects.png)
-
-</details>
+![Portfolio Önizleme](./public/images/screenshots/home.png)
 
 ## 🏃‍♂️ Kurulum ve Çalıştırma
 
