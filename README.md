@@ -1,70 +1,171 @@
-# Getting Started with Create React App
+# 🚀 My Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Modern ve responsive kişisel portfolio website'i. Space teması ile tasarlanmış, React teknolojisi kullanılarak geliştirilmiştir.
 
-## Available Scripts
+![Portfolio Preview](./public/images/portfolio-preview.png)
 
-In the project directory, you can run:
+## ✨ Özellikler
 
-### `npm start`
+- 🌌 **Space Teması** - Uzay konseptli modern tasarım
+- 📱 **Responsive Design** - Tüm cihazlarda mükemmel görünüm
+- 🎨 **Smooth Animations** - Akıcı geçişler ve hover efektleri
+- 💼 **Projeler Galerisi** - Filtrelenebilir proje vitrin alanı
+- 🛠️ **Yetenekler Sayfası** - Progress bar'lar ile yetenek seviyesi gösterimi
+- 📧 **İletişim Formu** - Direkt iletişim imkanı
+- 🔍 **SEO Optimized** - Arama motorları için optimize edilmiş
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Kullanılan Teknolojiler
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- **React 18** - Modern UI framework
+- **React Router** - Sayfa yönlendirmeleri
+- **CSS3** - Custom styles ve animations
+- **React Icons** - Profesyonel icon set
 
-### `npm test`
+### Design & Tools
+- **Figma** - UI/UX tasarım
+- **Git** - Versiyon kontrolü
+- **VS Code** - Development environment
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Canlı Demo
 
-### `npm run build`
+[Portfolio Website'i Görüntüle](https://your-portfolio-url.com)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📸 Ekran Görüntüleri
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<details>
+<summary>Sayfalardan Örnekler</summary>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Ana Sayfa
+![Ana Sayfa](./public/images/screenshots/home.png)
 
-### `npm run eject`
+### Projeler Sayfası
+![Projeler](./public/images/screenshots/projects.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Yetenekler Sayfası
+![Yetenekler](./public/images/screenshots/skills.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+</details>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🏃‍♂️ Kurulum ve Çalıştırma
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Gereksinimler
+- Node.js (v16 veya üzeri)
+- npm veya yarn
 
-## Learn More
+### Kurulum Adımları
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Repository'yi klonlayın**
+```bash
+git clone https://github.com/ogulcankacar/my-portfolio.git
+cd my-portfolio
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Bağımlılıkları yükleyin**
+```bash
+npm install
+```
 
-### Code Splitting
+3. **Development server'ı başlatın**
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. **Tarayıcıda açın**
+```
+http://localhost:3000
+```
 
-### Analyzing the Bundle Size
+## 📁 Proje Yapısı
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+my-portfolio/
+├── public/
+│   ├── images/
+│   │   ├── projects/          # Proje resimleri
+│   │   └── screenshots/       # README için ekran görüntüleri
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Home/              # Ana sayfa
+│   │   ├── Navbar/            # Navigasyon
+│   │   ├── Projects/          # Projeler sayfası
+│   │   ├── Skills/            # Yetenekler sayfası
+│   │   └── Contact/           # İletişim sayfası
+│   ├── App.js                 # Ana uygulama
+│   └── index.js               # Entry point
+└── README.md
+```
 
-### Making a Progressive Web App
+## 🎨 Özelleştirme
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Kişisel Bilgileri Güncelleme
 
-### Advanced Configuration
+1. **Navbar'da isim değiştirme** - `src/components/Navbar/navbar.js`
+2. **Ana sayfa içeriği** - `src/components/Home/Home.js`
+3. **Yetenekler güncelleme** - `src/components/Skills/Skills.js`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Yeni Proje Ekleme
 
-### Deployment
+```javascript
+// src/components/Projects/Projects.js
+{
+    id: 5,
+    title: "Yeni Proje",
+    description: "Proje açıklaması...",
+    image: "/images/projects/yeni-proje.jpg",
+    technologies: ["React", "Node.js"],
+    category: "fullstack",
+    githubLink: "https://github.com/username/repo",
+    liveLink: "https://demo.com",
+    status: "completed"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Renk Teması Değiştirme
 
-### `npm run build` fails to minify
+CSS dosyalarındaki color variables'ları güncelleyin:
+- Primary: `#b794f6` (Mor)
+- Secondary: `#64ffda` (Turkuaz)
+- Background: `linear-gradient(135deg, #000000 0%, #0a0a23 30%, #1a1a2e 70%, #000000 100%)`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📦 Build ve Deploy
+
+### Production Build
+```bash
+npm run build
+```
+
+### Deploy Seçenekleri
+- **Netlify** - Drag & drop ile kolay deploy
+- **Vercel** - GitHub integration ile otomatik deploy
+- **GitHub Pages** - Ücretsiz hosting
+- **Firebase Hosting** - Google'ın hosting servisi
+
+## 🤝 Katkıda Bulunma
+
+1. Fork yapın
+2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
+3. Commit yapın (`git commit -m 'Add some amazing feature'`)
+4. Branch'i push edin (`git push origin feature/amazing-feature`)
+5. Pull Request oluşturun
+
+## 📧 İletişim
+
+- **Email:** ogulcankacar@example.com
+- **LinkedIn:** [linkedin.com/in/ogulcankacar](https://linkedin.com/in/ogulcankacar)
+- **GitHub:** [github.com/ogulcankacar](https://github.com/ogulcankacar)
+
+## 📄 Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
+
+## 🙏 Teşekkürler
+
+- React ekibine harika framework için
+- React Icons topluluğuna icon seti için
+- Tüm open source katkıda bulunanlara
+
+---
+
+⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!

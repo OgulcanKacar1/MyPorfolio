@@ -1,54 +1,89 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Projects.css';
-import { FaBolt, FaCircle, FaSquare, FaPlay, FaStar, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaBolt, FaCircle, FaSquare, FaPlay, FaStar, FaGithub, FaVideo, FaTimes } from 'react-icons/fa';
 
 const Projects = () => {
     const [activeFilter, setActiveFilter] = useState('all');
+    const [selectedVideo, setSelectedVideo] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [imageErrors, setImageErrors] = useState(new Set());
+
+    const openVideoModal = (videoUrl) => {
+        setSelectedVideo(videoUrl);
+        setIsModalOpen(true);
+    };
+
+    const closeVideoModal = () => {
+        setSelectedVideo(null);
+        setIsModalOpen(false);
+    };
+
+    const handleImageError = (projectId) => {
+        setImageErrors(prev => new Set([...prev, projectId]));
+    };
+
+    // ESC tuşu ile modalı kapatma
+    useEffect(() => {
+        const handleEscKey = (event) => {
+            if (event.keyCode === 27) {
+                closeVideoModal();
+            }
+        };
+
+        if (isModalOpen) {
+            document.addEventListener('keydown', handleEscKey);
+            document.body.style.overflow = 'hidden'; // Scroll'u engelle
+        }
+
+        return () => {
+            document.removeEventListener('keydown', handleEscKey);
+            document.body.style.overflow = 'unset'; // Scroll'u tekrar aktif et
+        };
+    }, [isModalOpen]);
 
     const projects = [
         {
             id: 1,
             title: "My Portfolio",
             description: "Modern ve responsive kişisel portföy web sitesi. Kullanıcı dostu arayüz, projeler ve iletişim bilgileri.",
-            image: "/api/placeholder/400/250",
+            image: "/images/projects/my-portfolio.png",
             technologies: ["React", "Javascript"],
             category: "frontend",
-            githubLink: "https://github.com/username/ecommerce",
-            liveLink: "https://ecommerce-demo.com",
+            githubLink: "https://github.com/OgulcanKacar1/MyPorfolio",
             status: "completed"
         },
         {
             id: 2,
-            title: "Görev Yönetim Uygulaması",
+            title: "Proje Yönetim Sistemi",
             description: "Takım çalışması için geliştirilmiş görev takip ve proje yönetim uygulaması. Real-time güncellemeler.",
-            image: "/api/placeholder/400/250",
-            technologies: ["React", "Spring Boot", "PostgreSQL", "WebSocket"],
+            image: "/images/projects/pms.png",
+            technologies: ["React", "Spring Boot", "MySql"],
             category: "fullstack",
-            githubLink: "https://github.com/username/task-manager",
-            liveLink: "https://taskmanager-demo.com",
+            githubLink: "https://github.com/OgulcanKacar1/project-management-system-api",
+            videoUrl: "/videos/projects/OgulcanKacarJava.mp4",
             status: "completed"
         },
         {
             id: 3,
-            title: "Hava Durumu Uygulaması",
-            description: "Gerçek zamanlı hava durumu bilgileri ve 7 günlük tahmin sunan modern weather app.",
-            image: "/api/placeholder/400/250",
-            technologies: ["React", "Weather API", "CSS3"],
-            category: "frontend",
-            githubLink: "https://github.com/username/weather-app",
-            liveLink: "https://weather-demo.com",
+            title: "Veteriner Yönetim Bilgi Sistemi",
+            description: "Veteriner hekimler için hasta yönetimi ve randevu takibi. Modern arayüz ve kullanıcı dostu deneyim.",
+            image: "/images/projects/vys.jpg",
+            technologies: ["React", "Spring Boot", "MySQL"],
+            category: "fullstack",
+            githubLink: "https://github.com/OgulcanKacar1/veterinary-management-system",
+            videoUrl: "/videos/projects/vysTanitim.mp4",
             status: "completed"
         },
         {
             id: 4,
-            title: "Blog Platformu",
-            description: "Kişisel blog yazma ve paylaşma platformu. Markdown desteği ve yorum sistemi.",
-            image: "/api/placeholder/400/250",
-            technologies: ["React", "Node.js", "MySQL", "Markdown"],
+            title: "Restoran Yönetim Sistemi",
+            description: "Restoran yönetimi için kapsamlı bir uygulama. Menü yönetimi, sipariş takibi ve müşteri yönetimi.",
+            image: "/images/projects/rms.png",
+            technologies: ["JavaFX", "Java", "MsSQL"],
             category: "fullstack",
             githubLink: "https://github.com/username/blog-platform",
-            liveLink: "",
-            status: "in-progress"
+            videoUrl: "/videos/projects/rmsTanitim.mp4", // Video henüz yok
+            status: "completed"
         },
         
     ];
@@ -116,7 +151,17 @@ const Projects = () => {
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             <div className="project-image">
-                                <img src={project.image} alt={project.title} />
+                                {imageErrors.has(project.id) ? (
+                                    <div className="image-fallback">
+                                        <span className="fallback-icon">🖼️</span>
+                                    </div>
+                                ) : (
+                                    <img 
+                                        src={project.image} 
+                                        alt={project.title}
+                                        onError={() => handleImageError(project.id)}
+                                    />
+                                )}
                                 <div className="project-overlay">
                                     <div className="project-links">
                                         {project.githubLink && (
@@ -129,15 +174,13 @@ const Projects = () => {
                                                 <FaGithub /> GitHub
                                             </a>
                                         )}
-                                        {project.liveLink && (
-                                            <a 
-                                                href={project.liveLink} 
-                                                target="_blank" 
-                                                rel="noopener noreferrer"
-                                                className="project-link live"
+                                        {project.videoUrl && (
+                                            <button 
+                                                onClick={() => openVideoModal(project.videoUrl)}
+                                                className="project-link video"
                                             >
-                                                <FaExternalLinkAlt /> Canlı Demo
-                                            </a>
+                                                <FaVideo /> Tanıtım Videosu
+                                            </button>
                                         )}
                                     </div>
                                 </div>
@@ -172,6 +215,45 @@ const Projects = () => {
                     <div className="no-projects">
                         <h3>Bu kategoride henüz proje bulunmuyor</h3>
                         <p>Yakında yeni projeler eklenecek!</p>
+                    </div>
+                )}
+
+                {/* Video Modal */}
+                {isModalOpen && (
+                    <div className="video-modal" onClick={closeVideoModal}>
+                        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                            <button className="modal-close" onClick={closeVideoModal}>
+                                <FaTimes />
+                            </button>
+                            <div className="video-container">
+                                {selectedVideo ? (
+                                    <video
+                                        src={selectedVideo}
+                                        controls
+                                        autoPlay
+                                        muted
+                                        loop
+                                        preload="metadata"
+                                        onError={(e) => {
+                                            console.warn('Video yüklenemedi:', selectedVideo);
+                                        }}
+                                    >
+                                        Video formatı desteklenmiyor
+                                    </video>
+                                ) : (
+                                    <div style={{ 
+                                        display: 'flex', 
+                                        alignItems: 'center', 
+                                        justifyContent: 'center',
+                                        height: '300px',
+                                        color: '#ffffff',
+                                        fontSize: '1.2rem'
+                                    }}>
+                                        Video yükleniyor...
+                                    </div>
+                                )}
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>
