@@ -1,0 +1,379 @@
+/* Projects Page - Space Theme */
+.projects {
+    background: linear-gradient(135deg, #000000 0%, #0a0a23 30%, #1a1a2e 70%, #000000 100%);
+    min-height: 100vh;
+    color: white;
+    padding: 120px 2rem 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Yıldız efektleri */
+.projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(1px 1px at 25px 35px, #ffffff, transparent),
+        radial-gradient(1px 1px at 45px 75px, #ffffff, transparent),
+        radial-gradient(1px 1px at 95px 45px, #ffffff, transparent),
+        radial-gradient(1px 1px at 135px 85px, #ffffff, transparent),
+        radial-gradient(2px 2px at 320px 160px, #b794f6, transparent),
+        radial-gradient(1.5px 1.5px at 520px 90px, #64ffda, transparent);
+    background-repeat: repeat;
+    background-size: 650px 450px;
+    opacity: 0.4;
+    pointer-events: none;
+    animation: twinkle 8s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+}
+
+.projects-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Section */
+.projects-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.projects-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #ffffff, #b794f6, #64ffda);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 30px rgba(183, 148, 246, 0.5);
+    font-family: 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+    letter-spacing: -1px;
+}
+
+.title-icon {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 3.5rem;
+    animation: float 3s ease-in-out infinite;
+    color: #b794f6;
+    text-shadow: 0 0 20px rgba(183, 148, 246, 0.8);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+.projects-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Filter Section */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(183, 148, 246, 0.3);
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(183, 148, 246, 0.6);
+    box-shadow: 0 10px 25px rgba(183, 148, 246, 0.2);
+}
+
+.filter-btn.active {
+    background: linear-gradient(45deg, rgba(183, 148, 246, 0.3), rgba(100, 255, 218, 0.3));
+    border-color: #b794f6;
+    box-shadow: 0 10px 30px rgba(183, 148, 246, 0.3);
+}
+
+.filter-icon {
+    font-size: 1.2rem;
+    color: #b794f6;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(183, 148, 246, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    animation: fadeInUp 1s ease-out both;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(183, 148, 246, 0.5);
+    box-shadow: 0 20px 40px rgba(183, 148, 246, 0.2);
+}
+
+/* Project Image */
+.project-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(183, 148, 246, 0.3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.project-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-link.github:hover {
+    background: rgba(100, 255, 218, 0.3);
+    border-color: #64ffda;
+}
+
+.project-link.live:hover {
+    background: rgba(183, 148, 246, 0.3);
+    border-color: #b794f6;
+}
+
+/* Project Content */
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.project-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.project-status {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #ffffff;
+    white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.project-description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Technologies */
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background: linear-gradient(45deg, rgba(183, 148, 246, 0.2), rgba(100, 255, 218, 0.2));
+    border: 1px solid rgba(183, 148, 246, 0.3);
+    color: #ffffff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: linear-gradient(45deg, rgba(183, 148, 246, 0.3), rgba(100, 255, 218, 0.3));
+    transform: translateY(-1px);
+}
+
+/* No Projects */
+.no-projects {
+    text-align: center;
+    padding: 3rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.no-projects h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects {
+        padding: 100px 1rem 2rem 1rem;
+    }
+    
+    .projects-title {
+        font-size: 2.5rem;
+    }
+    
+    .title-icon {
+        font-size: 2.5rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .filter-container {
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .project-link {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-title {
+        font-size: 2rem;
+    }
+    
+    .title-icon {
+        font-size: 2rem;
+    }
+    
+    .projects-subtitle {
+        font-size: 1rem;
+    }
+    
+    .project-content {
+        padding: 1rem;
+    }
+    
+    .project-title {
+        font-size: 1.1rem;
+    }
+    
+    .filter-container {
+        justify-content: center;
+    }
+}

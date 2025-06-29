@@ -1,0 +1,120 @@
+/* Space-themed Navbar */
+.navbar {
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.navbar-logo {
+  display: flex;
+  gap: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar-logo:hover .first-logo {
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+.navbar-logo:hover .second-logo {
+  color: #e879f9;
+  text-shadow: 0 0 20px rgba(232, 121, 249, 0.8);
+  transform: scale(1.05);
+}
+
+.first-logo, .second-logo {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  font-family: 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+}
+
+.second-logo {
+  color: #b794f6;
+  text-shadow: 0 0 10px rgba(183, 148, 246, 0.5);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-item, .nav-right {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  position: relative;
+  font-family: 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+}
+
+.nav-links:hover {
+  background: rgba(183, 148, 246, 0.1);
+  border-color: #b794f6;
+  box-shadow: 0 0 15px rgba(183, 148, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Ana Sayfa linkinin alt çizgisini kaldır */
+.nav-links[href="/"] {
+  position: relative;
+}
+
+.nav-links[href="/"]:after {
+  content: none;
+}
+
+.nav-text {
+  font-weight: 500;
+}
+
+/* Space particles effect */
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+    radial-gradient(1px 1px at 40px 70px, #fff, transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+    radial-gradient(1px 1px at 160px 30px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  opacity: 0.3;
+  pointer-events: none;
+}
