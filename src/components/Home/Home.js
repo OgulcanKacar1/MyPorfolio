@@ -5,7 +5,6 @@ import {
     FaRocket, 
     FaCode, 
     FaGraduationCap, 
-    FaChevronDown,
     FaLinkedin,
     FaGithub,
     FaEnvelope,
@@ -13,12 +12,7 @@ import {
 } from 'react-icons/fa';
 
 const Home = () => {
-    const scrollToNext = () => {
-        window.scrollTo({
-            top: window.innerHeight,
-            behavior: 'smooth'
-        });
-    };
+    
 
     const stats = [
         { number: "3.66", label: "GPA", icon: <FaGraduationCap /> },

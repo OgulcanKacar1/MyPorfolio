@@ -1,17 +1,17 @@
-# 🚀 My Portfolio Website
+# 🚀 Oğulcan Kacar - Portfolio Website
 
-Modern ve responsive kişisel portfolio website'i. Space teması ile tasarlanmış, React teknolojisi kullanılarak geliştirilmiştir.
+Ben Oğulcan Kaçar'ın kişisel portfolio website'i. Modern React teknolojileri kullanılarak geliştirilmiş, responsive tasarıma sahip bir web sitesidir. Yazılım geliştirme yolculuğum, projelerim ve iletişim bilgilerimi içerir.
 
 ![Portfolio Preview](./public/images/portfolio-preview.png)
 
 ## ✨ Özellikler
 
-- 🌌 **Space Teması** - Uzay konseptli modern tasarım
+- 🌌 **Modern Tasarım** - Temiz ve profesyonel arayüz
 - 📱 **Responsive Design** - Tüm cihazlarda mükemmel görünüm
 - 🎨 **Smooth Animations** - Akıcı geçişler ve hover efektleri
-- 💼 **Projeler Galerisi** - Filtrelenebilir proje vitrin alanı
-- 🛠️ **Yetenekler Sayfası** - Progress bar'lar ile yetenek seviyesi gösterimi
-- 📧 **İletişim Formu** - Direkt iletişim imkanı
+- 💼 **Projeler Galerisi** - Gerçek projelerim ve teknolojiler
+- �‍🎓 **Hakkımda Sayfası** - Eğitim ve deneyimlerim, timeline
+- 📧 **İletişim Sayfası** - Sosyal medya linkleri ve e-posta
 - 🔍 **SEO Optimized** - Arama motorları için optimize edilmiş
 
 ## 🛠️ Kullanılan Teknolojiler
@@ -29,7 +29,7 @@ Modern ve responsive kişisel portfolio website'i. Space teması ile tasarlanmı
 
 ## 🚀 Canlı Demo
 
-[Portfolio Website'i Görüntüle](https://your-portfolio-url.com)
+[Portfolio Website'i Görüntüle](https://ogulcankacar-portfolio.netlify.app)
 
 ## 📸 Ekran Görüntüleri
 
@@ -39,11 +39,11 @@ Modern ve responsive kişisel portfolio website'i. Space teması ile tasarlanmı
 ### Ana Sayfa
 ![Ana Sayfa](./public/images/screenshots/home.png)
 
+### Hakkımda Sayfası
+![Hakkımda](./public/images/screenshots/about.png)
+
 ### Projeler Sayfası
 ![Projeler](./public/images/screenshots/projects.png)
-
-### Yetenekler Sayfası
-![Yetenekler](./public/images/screenshots/skills.png)
 
 </details>
 
@@ -90,7 +90,7 @@ my-portfolio/
 │   │   ├── Home/              # Ana sayfa
 │   │   ├── Navbar/            # Navigasyon
 │   │   ├── Projects/          # Projeler sayfası
-│   │   ├── Skills/            # Yetenekler sayfası
+│   │   ├── About/             # Hakkımda sayfası
 │   │   └── Contact/           # İletişim sayfası
 │   ├── App.js                 # Ana uygulama
 │   └── index.js               # Entry point
@@ -103,12 +103,14 @@ my-portfolio/
 
 1. **Navbar'da isim değiştirme** - `src/components/Navbar/navbar.js`
 2. **Ana sayfa içeriği** - `src/components/Home/Home.js`
-3. **Yetenekler güncelleme** - `src/components/Skills/Skills.js`
+3. **Hakkımda sayfası** - `src/components/About/About.js`
+4. **İletişim bilgileri** - `src/components/Contact/Contact.js`
 
 ### Yeni Proje Ekleme
 
+`src/components/Projects/Projects.js` dosyasındaki `projects` dizisine yeni proje ekleyin:
+
 ```javascript
-// src/components/Projects/Projects.js
 {
     id: 5,
     title: "Yeni Proje",
@@ -116,7 +118,7 @@ my-portfolio/
     image: "/images/projects/yeni-proje.jpg",
     technologies: ["React", "Node.js"],
     category: "fullstack",
-    githubLink: "https://github.com/username/repo",
+    githubLink: "https://github.com/ogulcankacar/repo",
     liveLink: "https://demo.com",
     status: "completed"
 }
@@ -124,10 +126,12 @@ my-portfolio/
 
 ### Renk Teması Değiştirme
 
-CSS dosyalarındaki color variables'ları güncelleyin:
-- Primary: `#b794f6` (Mor)
-- Secondary: `#64ffda` (Turkuaz)
-- Background: `linear-gradient(135deg, #000000 0%, #0a0a23 30%, #1a1a2e 70%, #000000 100%)`
+CSS dosyalarındaki ana renkler:
+- **Primary:** `#4f46e5` (İndigo)
+- **Secondary:** `#06b6d4` (Cyan)
+- **Accent:** `#8b5cf6` (Mor)
+- **Background:** Gradient tonları
+- **Text:** `#ffffff` (Beyaz) ve `#e5e7eb` (Açık gri)
 
 ## 📦 Build ve Deploy
 
@@ -152,20 +156,34 @@ npm run build
 
 ## 📧 İletişim
 
-- **Email:** ogulcankacar@example.com
+- **Email:** [ogulcankacar3@gmail.com](mailto:ogulcankacar3@gmail.com)
 - **LinkedIn:** [linkedin.com/in/ogulcankacar](https://linkedin.com/in/ogulcankacar)
 - **GitHub:** [github.com/ogulcankacar](https://github.com/ogulcankacar)
+- **Twitter:** [@ogulcankacar](https://twitter.com/ogulcankacar)
 
 ## 📄 Lisans
 
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
+Bu proje **MIT Lisansı** altında lisanslanmıştır. 
+
+### MIT Lisansı Nedir?
+MIT Lisansı, en liberal açık kaynak lisanslarından biridir ve şunlara izin verir:
+- ✅ **Ticari kullanım** - Projeyi ticari amaçlarla kullanabilirsiniz
+- ✅ **Değiştirme** - Kodu değiştirebilir ve geliştirebilirsiniz  
+- ✅ **Dağıtım** - Kodu yeniden dağıtabilirsiniz
+- ✅ **Özel kullanım** - Kodu özel projelerinizde kullanabilirsiniz
+- ⚠️ **Tek koşul** - Lisans metnini ve telif hakkını korumanız gerekir
+
+Detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
 ## 🙏 Teşekkürler
 
-- React ekibine harika framework için
-- React Icons topluluğuna icon seti için
-- Tüm open source katkıda bulunanlara
+- **React ekibine** harika framework için
+- **React Icons topluluğuna** kapsamlı icon seti için
+- **Açık kaynak topluluğuna** tüm katkılar için
+- **Mentorlarıma** rehberlik için
 
 ---
 
-⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!
+🌟 **Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!**
+
+*Bu portfolio, sürekli gelişim halindedir ve yeni projeler eklenmektedir.*
